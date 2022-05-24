@@ -1,147 +1,131 @@
+import org.omg.CORBA.WStringSeqHelper;
+
 import javax.swing.*;
 import java.util.Scanner;
-
 public class Solution {
     static Scanner reader = new Scanner(System.in);
-
     public static void main(String[] args) {
-
-//        int x = reader.nextInt(); //14:27 задание первое 8.5
-//        if (x>0)
-//            System.out.println("Плюс");
-//        else
-//            System.out.println("не плюс"); // 1/5
-
-
+        // First task 9.10
 //        System.out.println("Введите первый операнд");
-//        int x = reader.nextInt();
+//        int a = reader.nextInt();
 //        System.out.println("Введите второй операнд");
+//        int b = reader.nextInt();
+//        System.out.println("Введите третий операнд");
+//        int c = reader.nextInt();
+//        if (a>b) {
+//            System.out.println("Первый операнд больше второго");
+//        }
+//         if (a<b) {
+//             System.out.println("Первый операнд меньше второго");
+//         }
+//         if (a == b) {
+//             System.out.println("первый и второй операнд равны");
+//         }
+//         if (a>c) {
+//             System.out.println("Первый операнд больше третьего ");
+//         }
+//         if ( a < c) {
+//             System.out.println("Третий операнд больше первого");
+//         }
+//         if (a==c) {
+//             System.out.println("первый и третий операнд равны");
+//         }
+//        if (b>c) {
+//            System.out.println("второй операнд больше третьего");
+//        }
+//        if (b<c) {
+//            System.out.println("третий операнд больше второго");
+//        }
+//        if (b==c) {
+//            System.out.println("Второй и третий операнд равны");// time to do 23 minutes
+//        }
+
+          // task 9.11
 //        int a = reader.nextInt();
-//        if (x>a) {
-//            a = -1;
+////        int a1 = a/100;
+////        int a2 = a%100/10;
+////        int a3 = a%10;
+////        if(a1 == a2 && a2 == a3)
+////            System.out.println("число такое же плоское как твоя мамаша");
+////        else
+////            System.out.println("ошибка.Введите число повторно"); // time to do 7 minutes
+
+        //task 9.23
+//        System.out.println("Ведите число");
+//        int a = reader.nextInt();
+//        int a1 = a/100;
+//        int a2 = a%100/10;
+//        int a3 = a%10;
+//        if((a1+a2+a3)%2==0 && a1*a2*a3%2==0)
+//            System.out.println("число явлется дважды четным");
+//        else
+//            System.out.println("нихуя не явлется,иди поспи"); // time to do 12 minutes
+
+
+        // Task 9.26
+//        System.out.println("Введите четырех значное число");
+//        int number4 = reader.nextInt();
+//        System.out.println("Ведите двухзначное число");
+//        int number2= reader.nextInt();
+//        int a1 = number4/100;
+//        int a2 = number4%100;
+//        if (a1+number2<100 && a1 + number2>9 || a2+number2<100 && a2+number2>9) {
+//            System.out.println("число является внутренним");
 //        }
 //        else
-//            a = 0;
-//        System.out.println(a); // 2/5
-
-
+//            System.out.println("число не является внутренним"); // time to do 13 minutes
+        // task 9.32
+//        System.out.println("Введите год рожения сайгина");
+//        int year = reader.nextInt();
+//        if (year > 1999 || year < 1900)
+//        {
+//            System.out.println("false год не верный");
+//        }
 //
-//        int a = reader.nextInt();
-//        if (a>100)
-//            System.out.println("true numeric");
-//        else
-//            System.out.println("error"); // 3/5
-
-
-//        System.out.println("enter the first operand");
-//        int x = reader.nextInt();
-//        System.out.println("enter the second operand");
-//        int a = reader.nextInt();
-//        if (x != a ) {
-//            a = x;
+//        if ((year % 4 == 0) && year % 100 != 0)
+//        {
+//            System.out.println(year + " високосный год");
+//        }
+//        else if ((year % 4 == 0) && (year % 100 == 0) && (year % 400 == 0))
+//        {
+//            System.out.println(year + " високосный год");
 //        }
 //        else
-//            x = a*2;
-//        System.out.println(x); // 4/5
-
-
-//        int x = reader.nextInt();
-//        if (x > 0) {
-//            x = x + 1;
-//            System.out.println(x);
+//        {
+//            System.out.println(year + " не високосный год"); // time to do 22 minutes
 //        }
-//        else
-//            x = x -1;
-//        System.out.println(x); // the end of the first task
+        //task 9.37 15:26
+        System.out.println("Ведите имя и фамилию");
+        String first = reader.nextLine();
+        System.out.println("Ведите имя и фамилию");
+        String second = reader.nextLine();
+        int idx = first.lastIndexOf(' ');
+        if (idx == -1)
+            throw new IllegalArgumentException("Only a single name: " + first);
+        String firstName = first.substring(0, idx);
+        String lastName  = first.substring(idx + 1);
+        int idx2 = first.lastIndexOf(' ');
+        if (idx2 == -1)
+            throw new IllegalArgumentException("Only a single name: " + second);
+        String firstName2 = second.substring(0, idx);
+        String lastName2  = second.substring(idx + 1);
+        if(firstName.equals(firstName2)) {
+            System.out.println("Тёзки, но не однофамильцы ");
+        }
+        if(lastName.equals(lastName2)) {
+            System.out.println("однофамильцы, но не тёзки");
+        }
+        if(firstName.equals(firstName2) && lastName.equals(lastName2)) {
+            System.out.println("и однофамильцы и тёзки");
 
+        }
+        else
+            System.out.println("error");
 
-        /**
-         * 1.
-         * Лучше в таких задачах называть переменные более понятным образом (См задачу)
-         * 2.
-         * В случае, когда студентов больше стульев - программа работает некорректно.
-         */
-//
-//        System.out.println("Enter amount of students.");
-//        int amountOfStudents = reader.nextInt();
-//
-//        System.out.println("Enter amount if chairs.");
-//        int amountOfChairs = reader.nextInt();
-
-
-        /**
-         * Обрати внимание, что после того, как мы переименовали переменные, в нижних фрагментах кода получилось нечто некрасивое
-         * А именно, мы перезаписываем переменную amountOfChairs количеством стульев, которых не хватает. Логично было бы создать для этого
-         * другую переменную, что бы не вгонять читающего в ступор.
-         */
-//        int chairsOverlap = 0;
-//
-//        if (amountOfStudents > amountOfChairs) {
-//            amountOfStudents = amountOfStudents - amountOfChairs;
-//            System.out.println(amountOfStudents);
-//            System.out.println("стульев не хватает");
-//        }
-//        if (amountOfStudents < amountOfChairs) {
-//            amountOfChairs = amountOfChairs - amountOfStudents;
-//            System.out.println(amountOfChairs);
-//            System.out.println("дима лох, а стульев многовато");
-//        }
-//        if (amountOfStudents == amountOfChairs)
-//            System.out.println("всего хватает, а дмитрий смотрит хентай)"); // the end of the task 8.11 time 15:38
-
-
-        // task 8.12 time 15:42
-        /**
-         * 404 - HTTP ошибка, свидетельствующая о том, что нужный нам веб ресурс не был найден =)
-         */
-//        int a = reader.nextInt();
-//        if (a < 1 || a > 5) {
-//            System.out.println("error:404 иди учись добоебина Ёбаная ");
-//        }
-//        else {
-//            System.out.println("мужчина");
-//        }
-
-
-        // task 8.14 time 15:58
-        /**
-         * Если условие не проходит - ничего не происходит
-         */
-//        int a = reader.nextInt();
-//        int b = a/10;
-//        int c = a%10;
-//        if (b > c)
-//            System.out.println(true);
-
-
-
-        // task 8.31 time 16:09
-
-        /**
-         * В задаче сказано, что в случае с нечетным числом - все выполняется наоборот. Значит, в случае с числом 999
-         * мы должны оставить его таким, какое оно есть, так как мы не можем прибавить к 9 единицу по условию задачи.
-         * Протестируй со всеми возможными значениями такую задачу лучше.
-         */
-        int a = reader.nextInt();
-        int b = a / 100;
-        int c = a%100/10;
-        int d = a%10;
-        if (b%2 == 0)
-            b = b + 1;
-            else
-                b = b - 1;
-            if (c%2 == 0)
-                c = c + 1;
-          else
-                c = c - 1;
-            if (d%2 == 0)
-                d = d + 1;
-            else
-                d = d - 1;
-        System.out.println(b * 100 + c*100/10 + d);
+        }
 
     }
-}
+
 
 
 
